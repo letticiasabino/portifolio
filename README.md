@@ -1,4 +1,4 @@
-# Portfólio Lettícia Sabino - HTML, CSS e JavaScript Puro
+# Portfólio Lettícia Sabino
 
 Portfólio profissional moderno com estética futurista (preto e roxo neon), desenvolvido em **HTML, CSS e JavaScript puro** com integração em tempo real com a API do GitHub.
 
