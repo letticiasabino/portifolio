@@ -36,19 +36,19 @@ http-server
 ## Personalização rápida
 
 - Alterar usuário do GitHub: edite `script.js` e atualize a constante do usuário.
-- Alterar cores e tema: edite `style.css` (variáveis :root se existirem).
+- Alterar cores e tema: edite `style.css` (variáveis :root).
 - Alterar email de contato: atualize o `mailto:` em `index.html` e em `script.js` se houver redirecionamento.
 
 ## Notas úteis
 
 - A integração com a API do GitHub usa chamadas públicas — limite de 60 requisições por hora sem autenticação.
-- O formulário usa `mailto:` (abre o cliente de e-mail). Para envio automático é necessário um backend.
+- O formulário usa `mailto:` (abre o e-mail do cliente). Para envio automático é necessário um backend.
 
 ## Contato
 
 - GitHub: https://github.com/letticiasabino
 - LinkedIn: https://linkedin.com/in/letticiasabino
-- Email: letticia@example.com
+- Email: letticiasabinoc@gmail.com
 
 ---
 
