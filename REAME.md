@@ -49,17 +49,10 @@ http-server
 # Acesse: http://localhost:8080
 ```
 
-**Com PHP:**
-```bash
-cd portfolio-letticia
-php -S localhost:8000
-# Acesse: http://localhost:8000
-```
-
 ## ✨ Funcionalidades
 
 ### 1. Navegação Responsiva
-- Menu fixo no topo com logo
+- Menu fixo no topo com "logo"
 - Menu mobile com toggle button
 - Links suaves para cada seção
 - Scroll to top button no footer
@@ -188,34 +181,6 @@ O portfólio é totalmente responsivo com breakpoints em:
 - A API do GitHub tem limite de 60 requisições por hora sem autenticação
 - Imagens são carregadas de CDN externo
 
-## 🚀 Deploy
-
-### GitHub Pages
-1. Crie um repositório chamado `username.github.io`
-2. Faça push dos arquivos
-3. Acesse `https://username.github.io`
-
-### Netlify
-1. Conecte seu repositório GitHub
-2. Configure build command: deixe em branco (site estático)
-3. Deploy automático
-
-### Vercel
-1. Importe seu repositório
-2. Configure como site estático
-3. Deploy automático
-
-### Servidor próprio
-1. Faça upload dos arquivos via FTP/SFTP
-2. Configure um servidor HTTP (Nginx, Apache)
-3. Aponte o domínio para o servidor
-
-## 📞 Suporte
-
-Para dúvidas ou sugestões, entre em contato:
-- GitHub: https://github.com/letticiasabino
-- LinkedIn: https://linkedin.com/in/letticiasabino
-- Email: letticia@example.com
 
 ## 📄 Licença
 
@@ -223,4 +188,4 @@ Este projeto é de uso pessoal. Sinta-se livre para customizar e usar como base 
 
 ---
 
-**Desenvolvido com ❤️ em HTML, CSS e JavaScript puro**
+**Desenvolvido com ❤️ em HTML, CSS e JavaScript puro por Lettícia Sabino**
