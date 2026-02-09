@@ -176,7 +176,7 @@ O portfólio é totalmente responsivo com breakpoints em:
 
 ## 📝 Notas
 
-- O formulário de contato usa `mailto:` para abrir o cliente de email padrão
+- O formulário de contato usa `mailto:` para abrir o email padrão do cliente
 - Para enviar emails automaticamente, você precisará de um backend (Node.js, PHP, etc.)
 - A API do GitHub tem limite de 60 requisições por hora sem autenticação
 - Imagens são carregadas de CDN externo
