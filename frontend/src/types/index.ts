@@ -43,3 +43,16 @@ export interface ResumeData {
   skillsText: string;
   languages: Language[];
 }
+
+export interface Repo {
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+  homepage: string;
+  language: string;
+  updated_at: string;
+  stargazers_count: number;
+  forks_count: number;
+  fork: boolean;
+}

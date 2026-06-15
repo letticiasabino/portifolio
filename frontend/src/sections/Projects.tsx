@@ -1,39 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
 import GlassCard from '../components/GlassCard';
-import axios from 'axios';
 import { ExternalLink, Star } from 'lucide-react';
-
-interface Repo {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-  homepage: string;
-  language: string;
-  updated_at: string;
-  stargazers_count: number;
-  forks_count: number;
-  fork: boolean;
-}
-
+import { useGithubProjects } from '../hooks/useGithubProjects';
 const Projects: React.FC = () => {
-  const [repos, setRepos] = useState<Repo[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    axios.get('https://api.github.com/users/letticiasabino/repos?sort=updated&per_page=12')
-      .then(res => {
-        const filtered = res.data.filter((r: Repo) => !r.fork);
-        setRepos(filtered);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []);
+  const { repos, loading } = useGithubProjects('letticiasabino');
 
   const containerVariants = {
     hidden: { opacity: 0 },
