@@ -1,191 +1,86 @@
 # Portfólio Lettícia Sabino
 
-Portfólio profissional moderno com estética futurista (preto e roxo neon), desenvolvido em **HTML, CSS e JavaScript puro** com integração em tempo real com a API do GitHub.
+Portfólio profissional moderno e dinâmico, reescrito com as melhores tecnologias do mercado para garantir alta performance, manutenção simplificada e uma experiência de usuário imersiva. Desenvolvido com **React, TypeScript, Tailwind CSS e Node.js**.
 
 ## 🎨 Design & Estética
 
-- **Tema:** Futurismo Neon Minimalista
-- **Paleta de cores:** Preto profundo (`#0a0a0a`) + Roxo Neon (`#a855f7`)
-- **Tipografia:** IBM Plex Mono (headlines) + Inter (body text)
-- **Efeitos:** Glow neon, animações elegantes, transições suaves
-- **Responsividade:** 100% responsivo (mobile, tablet, desktop)
+- **Estilização:** Tailwind CSS para um design system consistente e moderno.
+- **Ícones:** Lucide React & React Icons para uma iconografia elegante.
+- **Animações:** Framer Motion para transições suaves e micro-interações que enriquecem a experiência.
+- **Responsividade:** 100% responsivo, adaptando-se perfeitamente a dispositivos mobile, tablets e desktops.
 
 ## 📁 Estrutura de Arquivos
 
-```
-portfolio-letticia/
-├── index.html      # Estrutura HTML semântica
-├── styles.css      # Estilização com CSS puro
-├── script.js       # Interatividade e integração GitHub API
+O projeto é fullstack:
+
+```text
+portifolio/
+├── frontend/       # Interface do usuário (React, Vite, TypeScript, Tailwind)
+├── backend/        # API do servidor para envio de emails (Node.js, Express, Nodemailer)
 └── README.md       # Este arquivo
 ```
 
-## 🚀 Como Usar
+## 🚀 Tecnologias Utilizadas
 
-### Opção 1: Abrir localmente no navegador
-Simplesmente abra o arquivo `index.html` no seu navegador:
+### Frontend
+- **Framework/Build Tool:** React 19 com Vite
+- **Linguagem:** TypeScript
+- **Estilização:** Tailwind CSS v4
+- **Roteamento:** React Router DOM
+- **Animações:** Framer Motion
+
+### Backend
+- **Ambiente:** Node.js
+- **Framework:** Express
+- **Envio de Emails:** Nodemailer (recebe os contatos do frontend)
+- **Segurança e Configuração:** CORS, dotenv
+
+## ⚙️ Como Executar Localmente
+
+### Pré-requisitos
+- Node.js instalado
+- npm ou yarn
+
+### 1. Configurando o Backend (API de Emails)
+
+Abra um terminal e acesse a pasta do backend:
 ```bash
-# No Linux/Mac
-open index.html
-
-# No Windows
-start index.html
+cd backend
+npm install
 ```
 
-### Opção 2: Usar um servidor HTTP local
+Crie um arquivo `.env` na pasta `backend` utilizando o `.env.example` como base e preencha com suas credenciais de email (Senha de App do Gmail) para permitir o envio das mensagens do formulário.
 
-**Com Python 3:**
+Para iniciar o servidor:
 ```bash
-cd portfolio-letticia
-python3 -m http.server 8000
-# Acesse: http://localhost:8000
+node server.js
 ```
 
-**Com Node.js (http-server):**
+### 2. Configurando o Frontend
+
+Em um novo terminal, acesse a pasta do frontend:
 ```bash
-npm install -g http-server
-cd portfolio-letticia
-http-server
-# Acesse: http://localhost:8080
+cd frontend
+npm install
 ```
 
-## ✨ Funcionalidades
-
-### 1. Navegação Responsiva
-- Menu fixo no topo com "logo"
-- Menu mobile com toggle button
-- Links suaves para cada seção
-- Scroll to top button no footer
-
-### 2. Hero Section
-- Headline impactante com gradiente neon
-- Subtítulo profissional
-- CTAs (Ver Projetos, Solicitar Serviço)
-- Links sociais (GitHub, LinkedIn)
-- Elemento visual abstrato
-- Scroll indicator animado
-
-### 3. Projetos (Integração GitHub)
-- Busca automática de repositórios via GitHub API
-- Exibição de nome, descrição, linguagem e stars
-- Links diretos para GitHub
-- Animações ao scroll
-- Separação entre projetos destacados e outros
-
-### 4. Tecnologias
-- Categorias: Frontend, Backend, Banco de Dados, DevOps
-- Lista de tecnologias com hover effects
-- Métricas profissionais (experiência, projetos, linguagens)
-
-### 5. Sobre
-- Apresentação profissional
-- Destaques com checkmarks
-- Link para LinkedIn
-
-### 6. Contato
-- Formulário com validação
-- Campos: Nome, Email, Tipo de Serviço, Descrição, Orçamento, Prazo
-- Integração com mailto (abre cliente de email)
-- Informações de contato e tempo de resposta
-
-### 7. Footer
-- Links rápidos
-- Links sociais
-- Copyright dinâmico
-- Scroll to top button
-
-## 🔧 Personalização
-
-### Alterar dados do GitHub
-Abra `script.js` e modifique:
-```javascript
-const GITHUB_USERNAME = 'seu-username-aqui';
+Para iniciar o servidor de desenvolvimento:
+```bash
+npm run dev
 ```
+O portfólio estará acessível no seu navegador (geralmente em `http://localhost:5173`).
 
-### Alterar email de contato
-Abra `index.html` e procure por:
-```html
-<a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a>
-```
+## ✨ Principais Funcionalidades
 
-E em `script.js`:
-```javascript
-window.location.href = `mailto:seu-email@exemplo.com?subject=...`;
-```
-
-### Alterar cores
-Abra `styles.css` e modifique as variáveis CSS:
-```css
-:root {
-    --color-purple: #a855f7;  /* Cor principal */
-    --color-black: #0a0a0a;   /* Fundo */
-    /* ... outras cores ... */
-}
-```
-
-## 📱 Responsividade
-
-O portfólio é totalmente responsivo com breakpoints em:
-- **Desktop:** 1024px+
-- **Tablet:** 768px - 1023px
-- **Mobile:** até 767px
-
-## 🎯 Recursos Técnicos
-
-### HTML
-- Semântica correta com tags `<section>`, `<nav>`, `<footer>`
-- Meta tags para SEO
-- Acessibilidade com `aria-label`
-- Estrutura limpa e bem organizada
-
-### CSS
-- CSS Grid e Flexbox para layouts
-- Variáveis CSS para temas
-- Animações keyframes
-- Media queries para responsividade
-- Efeitos neon com `box-shadow` e `text-shadow`
-
-### JavaScript
-- Fetch API para integração GitHub
-- Event listeners para interatividade
-- Intersection Observer para animações ao scroll
-- Validação de formulário
-- Manipulação do DOM
-
-## 🔐 Segurança
-
-- Escapamento de HTML para prevenir XSS
-- Validação de email no cliente
-- Sem dependências externas (exceto Google Fonts)
-- API do GitHub é pública (sem token necessário)
-
-## ⚡ Performance
-
-- Sem frameworks pesados (React, Vue, etc.)
-- Carregamento rápido de assets
-- Preload de imagens
-- CSS otimizado
-- JavaScript minificável
-
-## 🌐 Compatibilidade
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📝 Notas
-
-- O formulário de contato usa `mailto:` para abrir o email padrão do cliente
-- Para enviar emails automaticamente, você precisará de um backend (Node.js, PHP, etc.)
-- A API do GitHub tem limite de 60 requisições por hora sem autenticação
-- Imagens são carregadas de CDN externo
-
+- **Navegação Dinâmica:** Roteamento de páginas instantâneo e suave no lado do cliente com React Router.
+- **Contato Direto & Formulário:** Informações de e-mail e redes sociais, além de um formulário que envia emails reais pelo backend.
+- **Apresentação de Projetos e Skills:** Componentização moderna que facilita a adição contínua de novos trabalhos e habilidades.
+- **Experiência Fluida:** Animações orquestradas via Framer Motion, elevando a qualidade percebida (feel) do portfólio.
 
 ## 📄 Licença
 
-Este projeto é de uso pessoal. Sinta-se livre para customizar e usar como base para seu próprio portfólio.
+Este projeto é de uso pessoal e exibe o portfólio de Lettícia Sabino. Sinta-se à vontade para se inspirar na arquitetura e design para criar o seu próprio.
 
 ---
 
-**Desenvolvido com ❤️ em HTML, CSS e JavaScript puro por Lettícia Sabino**
+**Desenvolvido com ❤️ por Lettícia Sabino**
