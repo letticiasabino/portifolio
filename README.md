@@ -15,7 +15,7 @@ Portfólio profissional moderno e dinâmico, projetado com as melhores tecnologi
 
 - **Integração com API do GitHub:** Os projetos na seção de portfólio são puxados dinamicamente diretamente do GitHub em tempo real!
 - **Navegação Dinâmica:** Roteamento de páginas instantâneo e suave no lado do cliente com React Router.
-- **Contato via E-mail:** Formulário de contato ligado a um servidor Backend próprio, que realiza o disparo real de e-mails via `Nodemailer`.
+- **Contato via E-mail:** Formulário de contato ligado a um servidor Backend próprio, que realiza o disparo real de e-mails via API HTTP (Resend).
 - **Currículo Embutido:** Página dedicada e customizada para visualização e leitura do currículo profissional.
 
 ## 📁 Estrutura de Arquivos
@@ -40,7 +40,7 @@ portifolio/
 
 ### Backend
 - **Node.js & Express**
-- **Nodemailer** (para gerenciar os e-mails recebidos)
+- **Resend SDK** (para gerenciar o envio de e-mails)
 - **CORS & Dotenv**
 
 ## 💻 Como Executar Localmente
@@ -57,7 +57,7 @@ cd backend
 npm install
 ```
 
-Crie um arquivo `.env` na pasta `backend` utilizando o `.env.example` como base e preencha com suas credenciais de email (Senha de App do Gmail de 16 dígitos) para permitir o envio das mensagens do formulário.
+Crie um arquivo `.env` na pasta `backend` utilizando o `.env.example` como base e preencha com sua `RESEND_API_KEY` (chave de API gratuita gerada no site do Resend) e o `RECEIVER_EMAIL` (seu email) para permitir o envio das mensagens do formulário.
 
 Para iniciar o servidor backend (escutará na porta 3000):
 ```bash
@@ -82,7 +82,7 @@ O portfólio estará acessível no seu navegador (geralmente em `http://localhos
 ## ☁️ Deploy (Produção)
 
 - **Frontend (Vercel):** Basta importar a pasta do GitHub na Vercel e configurar o *Root Directory* como `frontend`. Lembre-se de adicionar a variável de ambiente `VITE_API_URL` apontando para o seu link do backend em Produção.
-- **Backend (Render):** Importe na plataforma Render, utilizando o Root Directory `backend`. Adicione as variáveis `EMAIL_USER`, `EMAIL_PASS` e `RECEIVER_EMAIL` nas configurações de *Environment*.
+- **Backend (Render):** Importe na plataforma Render, utilizando o Root Directory `backend`. Adicione as variáveis `RESEND_API_KEY` e `RECEIVER_EMAIL` nas configurações de *Environment*.
 
 ---
 

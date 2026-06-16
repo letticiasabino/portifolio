@@ -8,11 +8,7 @@ services:
     envVars:
       - key: PORT
         value: 3000
-      - key: SMTP_HOST
+      - key: RESEND_API_KEY
         sync: false
-      - key: SMTP_PORT
-        value: 587
-      - key: SMTP_USER
-        sync: false
-      - key: SMTP_PASS
+      - key: RECEIVER_EMAIL
         sync: false

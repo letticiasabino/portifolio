@@ -49,6 +49,18 @@ const ContactForm: React.FC = () => {
                 placeholder="seu@email.com"
               />
             </div>
+            <div className="space-y-2">
+              <label htmlFor="whatsapp" className="text-sm font-medium text-gray-300">WhatsApp</label>
+              <input 
+                type="text" 
+                id="whatsapp" 
+                name="whatsapp" 
+                value={formData.whatsapp}
+                onChange={handleChange}
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-colors"
+                placeholder="(00) 00000-0000"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
