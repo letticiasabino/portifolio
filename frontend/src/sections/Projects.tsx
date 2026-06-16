@@ -31,27 +31,9 @@ const Projects: React.FC = () => {
         subtitle="Repositórios recentes e contribuições em tempo real."
       />
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        className="max-w-4xl mx-auto mb-16 px-4"
-      >
-        <GlassCard className="p-4 sm:p-6 overflow-x-auto flex flex-col items-center group">
-          <h4 className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-4">Activity Heatmap</h4>
-          <div className="w-full min-w-[700px] flex justify-center">
-            <img 
-              src="https://ghchart.rshah.org/a855f7/letticiasabino" 
-              alt="Lettícia Sabino's GitHub Contributions" 
-              className="w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-              style={{ filter: 'drop-shadow(0 0 10px rgba(168,85,247,0.2))' }}
-            />
-          </div>
-        </GlassCard>
-      </motion.div>
 
       {loading ? (
-        <div className="flex justify-center items-center h-64">
+        <div className="flex justify-center items-center h-64 mt-12">
           <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin neon-glow"></div>
         </div>
       ) : (
@@ -60,10 +42,16 @@ const Projects: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12"
         >
-          {repos.map((repo) => {
-            const imageUrl = `https://opengraph.githubassets.com/1/letticiasabino/${repo.name}`;
+          {repos.length === 0 && !loading ? (
+            <div className="col-span-full text-center text-gray-400 py-10">
+              <p>Os projetos estão sendo carregados ou o limite da API do GitHub foi atingido.</p>
+              <p className="mt-2 text-sm">Você pode conferir meus repositórios diretamente no card abaixo.</p>
+            </div>
+          ) : (
+            repos.map((repo) => {
+              const imageUrl = `https://opengraph.githubassets.com/1/letticiasabino/${repo.name}`;
             
             return (
               <motion.div 
@@ -118,9 +106,28 @@ const Projects: React.FC = () => {
                 </GlassCard>
               </motion.div>
             );
-          })}
+          }))}
         </motion.div>
       )}
+
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        className="max-w-4xl mx-auto mt-16 px-4"
+      >
+        <GlassCard className="p-4 sm:p-6 overflow-x-auto flex flex-col items-center group">
+          <h4 className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-4">Activity Heatmap</h4>
+          <div className="w-full min-w-[700px] flex justify-center">
+            <img 
+              src="https://ghchart.rshah.org/a855f7/letticiasabino" 
+              alt="Lettícia Sabino's GitHub Contributions" 
+              className="w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              style={{ filter: 'drop-shadow(0 0 10px rgba(168,85,247,0.2))' }}
+            />
+          </div>
+        </GlassCard>
+      </motion.div>
     </section>
   );
 };
