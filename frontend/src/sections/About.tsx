@@ -65,7 +65,7 @@ const About: React.FC = () => {
           className="lg:col-span-7 perspective-1000 h-full w-full"
         >
           <motion.div whileHover={{ scale: 1.02 }} className="h-full">
-            <GlassCard className="p-0 overflow-hidden h-full flex flex-col font-mono text-sm sm:text-base shadow-[0_0_30px_rgba(168,85,247,0.15)] border-white/10 group terminal-block">
+            <GlassCard className="p-0 overflow-hidden h-full flex flex-col font-mono text-xs sm:text-sm md:text-base shadow-[0_0_30px_rgba(168,85,247,0.15)] border-white/10 group terminal-block">
               {/* Cabeçalho da janela do Mac */}
               <div className="bg-[#0d1117]/80 px-4 py-3 border-b border-white/5 flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -73,7 +73,7 @@ const About: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 <span className="ml-2 text-xs text-muted/70">letticia.ts</span>
               </div>
-              <div className="p-6 flex-1 overflow-x-auto text-left whitespace-pre">
+              <div className="p-4 md:p-6 flex-1 overflow-x-auto text-left whitespace-pre-wrap break-words">
                 <span className="text-pink-500">const</span> <span className="text-blue-400">letticia</span> <span className="text-white">=</span> <span className="text-yellow-300">{`{`}</span><br/>
                 {'  '}<span className="text-purple-300">focus</span><span className="text-white">:</span> <span className="text-green-400">"Backend / Full Stack Development"</span><span className="text-white">,</span><br/>
                 {'  '}<span className="text-purple-300">status</span><span className="text-white">:</span> <span className="text-green-400">"building in public — shipping to production"</span><span className="text-white">,</span><br/>

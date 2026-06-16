@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Mail, Terminal } from 'lucide-react';
+import { Mail, Terminal, Menu, X } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Home from '../pages/Home';
 import Resume from '../pages/Resume';
@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
   const { toggleTheme } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
@@ -28,15 +29,34 @@ const Navbar: React.FC = () => {
         window.history.pushState(null, '', hash);
       }
     }
+    setIsOpen(false);
+  };
+
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Fallback garantido
+    const root = document.getElementById('root');
+    if (root) {
+      root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.history.pushState(null, '', '/');
+    }
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b-0 py-4 px-6 md:px-12 flex justify-between items-center">
-      <Link to="/" className="font-bold text-xl tracking-tight text-[var(--text-main)] flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-purple-500 neon-glow"></div>
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border-glass px-6 py-4 flex items-center justify-between transition-all duration-300">
+      <Link to="/" onClick={scrollToTop} className="font-bold text-xl tracking-tight text-[var(--text-main)] flex items-center gap-2 group">
+        <div className="w-2 h-2 rounded-full bg-purple-500 neon-glow group-hover:animate-ping"></div>
         Lettícia Sabino
       </Link>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4">
         <div className="hidden md:flex gap-6 text-sm font-medium text-muted items-center">
           <a href="#home" onClick={(e) => handleNavClick(e, '#hero')} className="hover:text-[var(--text-main)] transition-colors">Home</a>
           <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="hover:text-[var(--text-main)] transition-colors">Sobre</a>
@@ -57,7 +77,25 @@ const Navbar: React.FC = () => {
         >
           <Terminal size={18} />
         </button>
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden p-2 text-muted hover:text-[var(--text-main)] transition-colors"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {isOpen && (
+        <div className="absolute top-[100%] left-0 right-0 glass-effect border-t border-border-glass flex flex-col p-6 gap-6 md:hidden z-50 animate-in slide-in-from-top-2 shadow-2xl">
+          <a href="#home" onClick={(e) => handleNavClick(e, '#hero')} className="text-[var(--text-main)] font-semibold text-lg hover:text-purple-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">Home</a>
+          <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="text-[var(--text-main)] font-semibold text-lg hover:text-purple-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">Sobre</a>
+          <a href="#experience" onClick={(e) => handleNavClick(e, '#experience')} className="text-[var(--text-main)] font-semibold text-lg hover:text-purple-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">Experiência</a>
+          <a href="#skills" onClick={(e) => handleNavClick(e, '#skills')} className="text-[var(--text-main)] font-semibold text-lg hover:text-purple-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">Skills</a>
+          <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')} className="text-[var(--text-main)] font-semibold text-lg hover:text-purple-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">Projetos</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="text-[var(--text-main)] font-semibold text-lg hover:text-purple-400 transition-colors py-2 px-4 rounded-lg hover:bg-white/5">Contato</a>
+          <Link to="/meu-curriculo" onClick={() => setIsOpen(false)} className="text-purple-400 font-bold text-lg py-3 px-4 rounded-lg hover:bg-purple-500/10 mt-2 border-t border-border-glass">Meu Currículo</Link>
+        </div>
+      )}
     </nav>
   );
 };

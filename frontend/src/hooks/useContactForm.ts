@@ -32,6 +32,8 @@ export const useContactForm = () => {
         setFormData({ name: '', email: '', serviceType: '', description: '' });
         setTimeout(() => setStatus('idle'), 5000);
       } else {
+        const errData = await response.json().catch(() => null);
+        console.error('Detalhes do erro no backend:', errData);
         setStatus('error');
       }
     } catch (error) {

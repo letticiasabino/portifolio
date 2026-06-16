@@ -4,6 +4,7 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 import GlassLayout from './layouts/GlassLayout';
 import CyberLayout from './layouts/CyberLayout';
 import Preloader from './components/Preloader';
+import ScrollToTop from './components/ScrollToTop';
 
 const AppContent: React.FC = () => {
   const { theme } = useTheme();
@@ -30,6 +31,8 @@ const AppContent: React.FC = () => {
       {(!showPreloader || preloaderDone) && (
         theme === 'hacker' ? <CyberLayout /> : <GlassLayout />
       )}
+      
+      <ScrollToTop />
     </BrowserRouter>
   );
 };

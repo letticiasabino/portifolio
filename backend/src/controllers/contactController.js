@@ -12,6 +12,6 @@ export const handleContactForm = async (req, res) => {
     return res.status(200).json({ message: 'Mensagem enviada com sucesso!' });
   } catch (error) {
     console.error('Erro ao processar formulário de contato:', error);
-    return res.status(500).json({ error: 'Erro ao enviar mensagem. Tente novamente mais tarde.' });
+    return res.status(500).json({ error: 'Erro ao enviar mensagem. Tente novamente mais tarde.', details: error.message });
   }
 };
