@@ -1,13 +1,22 @@
 # Portfólio Lettícia Sabino
 
-Portfólio profissional moderno e dinâmico, reescrito com as melhores tecnologias do mercado para garantir alta performance, manutenção simplificada e uma experiência de usuário imersiva. Desenvolvido com **React, TypeScript, Tailwind CSS e Node.js**.
+Portfólio profissional moderno e dinâmico, projetado com as melhores tecnologias do mercado para garantir alta performance, manutenção simplificada e uma experiência de usuário imersiva. Desenvolvido com **React, TypeScript, Tailwind CSS e Node.js**.
 
 ## 🎨 Design & Estética
 
-- **Estilização:** Tailwind CSS para um design system consistente e moderno.
-- **Ícones:** Lucide React & React Icons para uma iconografia elegante.
-- **Animações:** Framer Motion para transições suaves e micro-interações que enriquecem a experiência.
-- **Responsividade:** 100% responsivo, adaptando-se perfeitamente a dispositivos mobile, tablets e desktops.
+- **Multi-Temas:** O projeto conta com dois layouts completamente diferentes que o usuário pode alternar a qualquer momento:
+  - **Glass Layout (Padrão):** Design limpo e elegante inspirado em *Glassmorphism*, com efeitos de vidro translúcido, gradientes vibrantes e partículas de luz.
+  - **Cyber/Hacker Layout:** Tema inspirado em terminais antigos, focado em desenvolvedores (Dark mode profundo, texto verde, scanlines e blocos estilo terminal).
+- **Estilização:** Tailwind CSS (v4) para um design system consistente e moderno.
+- **Animações:** Transições fluidas e micro-interações que enriquecem a experiência, além de um botão flutuante inteligente de "Voltar ao Topo".
+- **Responsividade:** Layouts 100% responsivos, garantindo legibilidade e menus adaptáveis para dispositivos móveis, tablets e desktops.
+
+## ⚙️ Principais Funcionalidades
+
+- **Integração com API do GitHub:** Os projetos na seção de portfólio são puxados dinamicamente diretamente do GitHub em tempo real!
+- **Navegação Dinâmica:** Roteamento de páginas instantâneo e suave no lado do cliente com React Router.
+- **Contato via E-mail:** Formulário de contato ligado a um servidor Backend próprio, que realiza o disparo real de e-mails via `Nodemailer`.
+- **Currículo Embutido:** Página dedicada e customizada para visualização e leitura do currículo profissional.
 
 ## 📁 Estrutura de Arquivos
 
@@ -15,27 +24,26 @@ O projeto é fullstack:
 
 ```text
 portifolio/
-├── frontend/       # Interface do usuário (React, Vite, TypeScript, Tailwind)
-├── backend/        # API do servidor para envio de emails (Node.js, Express, Nodemailer)
+├── frontend/       # Interface (React, Vite, TypeScript, Tailwind, Context API)
+├── backend/        # API do servidor (Node.js, Express, Nodemailer)
 └── README.md       # Este arquivo
 ```
 
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
-- **Framework/Build Tool:** React 19 com Vite
-- **Linguagem:** TypeScript
-- **Estilização:** Tailwind CSS v4
-- **Roteamento:** React Router DOM
-- **Animações:** Framer Motion
+- **React 19 com Vite**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **React Router DOM**
+- **Framer Motion** & Ícones (`lucide-react`, `react-icons`)
 
 ### Backend
-- **Ambiente:** Node.js
-- **Framework:** Express
-- **Envio de Emails:** Nodemailer (recebe os contatos do frontend)
-- **Segurança e Configuração:** CORS, dotenv
+- **Node.js & Express**
+- **Nodemailer** (para gerenciar os e-mails recebidos)
+- **CORS & Dotenv**
 
-## ⚙️ Como Executar Localmente
+## 💻 Como Executar Localmente
 
 ### Pré-requisitos
 - Node.js instalado
@@ -49,12 +57,13 @@ cd backend
 npm install
 ```
 
-Crie um arquivo `.env` na pasta `backend` utilizando o `.env.example` como base e preencha com suas credenciais de email (Senha de App do Gmail) para permitir o envio das mensagens do formulário.
+Crie um arquivo `.env` na pasta `backend` utilizando o `.env.example` como base e preencha com suas credenciais de email (Senha de App do Gmail de 16 dígitos) para permitir o envio das mensagens do formulário.
 
-Para iniciar o servidor:
+Para iniciar o servidor backend (escutará na porta 3000):
 ```bash
-node server.js
+npm start
 ```
+*(ou rode `node server.js`)*
 
 ### 2. Configurando o Frontend
 
@@ -70,16 +79,10 @@ npm run dev
 ```
 O portfólio estará acessível no seu navegador (geralmente em `http://localhost:5173`).
 
-## ✨ Principais Funcionalidades
+## ☁️ Deploy (Produção)
 
-- **Navegação Dinâmica:** Roteamento de páginas instantâneo e suave no lado do cliente com React Router.
-- **Contato Direto & Formulário:** Informações de e-mail e redes sociais, além de um formulário que envia emails reais pelo backend.
-- **Apresentação de Projetos e Skills:** Componentização moderna que facilita a adição contínua de novos trabalhos e habilidades.
-- **Experiência Fluida:** Animações orquestradas via Framer Motion, elevando a qualidade percebida (feel) do portfólio.
-
-## 📄 Licença
-
-Este projeto é de uso pessoal e exibe o portfólio de Lettícia Sabino. Sinta-se à vontade para se inspirar na arquitetura e design para criar o seu próprio.
+- **Frontend (Vercel):** Basta importar a pasta do GitHub na Vercel e configurar o *Root Directory* como `frontend`. Lembre-se de adicionar a variável de ambiente `VITE_API_URL` apontando para o seu link do backend em Produção.
+- **Backend (Render):** Importe na plataforma Render, utilizando o Root Directory `backend`. Adicione as variáveis `EMAIL_USER`, `EMAIL_PASS` e `RECEIVER_EMAIL` nas configurações de *Environment*.
 
 ---
 
