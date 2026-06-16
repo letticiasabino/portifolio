@@ -3,7 +3,7 @@ import { resumeData } from '../../data/resumeData';
 
 const CyberHero: React.FC = () => {
   return (
-    <div className="mb-12 border border-[#1f2937] bg-[#0d1117] rounded-lg p-6 relative overflow-hidden group hover:border-green-500/50 transition-colors">
+    <div className="mb-12 border border-[#1f2937] bg-[#0d1117] rounded-lg p-6 relative overflow-hidden group hover:border-green-500/50 transition-colors random-glitch" style={{ animationDelay: '1.2s' }}>
       <div className="absolute top-0 left-0 w-1 h-full bg-green-500"></div>
       <div className="font-mono text-sm sm:text-base text-gray-300 leading-relaxed">
         <span className="text-green-500 font-bold">~$</span> Olá, eu sou Lettícia Sabino.<br />

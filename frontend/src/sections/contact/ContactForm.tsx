@@ -16,10 +16,6 @@ const ContactForm: React.FC = () => {
       transition={{ duration: 0.6, delay: 0.2 }}
       className="max-w-4xl mx-auto"
     >
-      <h3 className="text-2xl font-bold text-center text-[var(--text-main)] mb-8 flex flex-col items-center justify-center">
-        <span className="text-sm font-semibold text-purple-500 uppercase tracking-wider mb-2">Mensagem</span>
-        Envie um Briefing
-      </h3>
       <GlassCard className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
@@ -63,23 +59,43 @@ const ContactForm: React.FC = () => {
             </div>
           </div>
 
-          <div className="space-y-2">
-            <label htmlFor="serviceType" className="text-sm font-medium text-gray-300">Tipo de Serviço *</label>
-            <select 
-              id="serviceType" 
-              name="serviceType" 
-              value={formData.serviceType}
-              onChange={handleChange}
-              required 
-              className="w-full bg-[#0d1117] border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-colors appearance-none"
-            >
-              <option value="">Selecione um serviço</option>
-              <option value="Frontend">Desenvolvimento Frontend</option>
-              <option value="Backend">Desenvolvimento Backend</option>
-              <option value="FullStack">Desenvolvimento Full Stack</option>
-              <option value="API">Desenvolvimento de APIs</option>
-              <option value="Outros">Outros / Consultoria</option>
-            </select>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label htmlFor="subject" className="text-sm font-medium text-gray-300">Assunto *</label>
+              <select 
+                id="subject" 
+                name="subject" 
+                value={formData.subject}
+                onChange={handleChange}
+                required 
+                className="w-full bg-[#0d1117] border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-colors appearance-none"
+              >
+                <option value="">Selecione um assunto</option>
+                <option value="Projeto">Projeto</option>
+                <option value="Ideia">Ideia</option>
+                <option value="Serviço">Serviço</option>
+                <option value="Oportunidade">Oportunidade</option>
+              </select>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="serviceType" className="text-sm font-medium text-gray-300">Tipo de Serviço *</label>
+              <select 
+                id="serviceType" 
+                name="serviceType" 
+                value={formData.serviceType}
+                onChange={handleChange}
+                required 
+                className="w-full bg-[#0d1117] border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-colors appearance-none"
+              >
+                <option value="">Selecione um serviço</option>
+                <option value="Frontend">Desenvolvimento Frontend</option>
+                <option value="Backend">Desenvolvimento Backend</option>
+                <option value="FullStack">Desenvolvimento Full Stack</option>
+                <option value="API">Desenvolvimento de APIs</option>
+                <option value="Outros">Outros / Consultoria</option>
+              </select>
+            </div>
           </div>
 
           <div className="space-y-2">

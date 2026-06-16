@@ -57,7 +57,7 @@ const BackgroundCode: React.FC = () => {
   const fullText = Array(10).fill(codeSnippet).join('\n\n');
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 opacity-[0.03] text-[#00ff00] font-mono text-xs md:text-sm whitespace-pre select-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 opacity-[0.08] text-[#00ff00] font-mono text-xs md:text-sm whitespace-pre select-none">
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: '-50%' }}

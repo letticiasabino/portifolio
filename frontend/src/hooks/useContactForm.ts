@@ -5,6 +5,7 @@ export const useContactForm = () => {
     name: '',
     email: '',
     whatsapp: '',
+    subject: '',
     serviceType: '',
     description: ''
   });
@@ -30,7 +31,7 @@ export const useContactForm = () => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', whatsapp: '', serviceType: '', description: '' });
+        setFormData({ name: '', email: '', whatsapp: '', subject: '', serviceType: '', description: '' });
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         const errData = await response.json().catch(() => null);

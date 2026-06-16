@@ -12,13 +12,14 @@ const CyberProjects: React.FC = () => {
         <div className="text-green-500 font-mono text-sm animate-pulse">Fetching from GitHub API..._</div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {repos.map((repo: Repo) => (
+          {repos.map((repo: Repo, index: number) => (
             <a 
               key={repo.id}
               href={repo.html_url}
               target="_blank"
               rel="noreferrer"
-              className="border border-[#1f2937] bg-[#0d1117] rounded-lg p-5 hover:border-green-500/50 transition-colors font-mono block group"
+              className={`border border-[#1f2937] bg-[#0d1117] rounded-lg p-5 hover:border-green-500/50 transition-colors font-mono block group ${index === 1 ? 'random-glitch' : ''}`}
+              style={index === 1 ? { animationDelay: '3.7s' } : {}}
             >
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-white font-bold group-hover:text-green-400 transition-colors truncate">{repo.name}</h3>

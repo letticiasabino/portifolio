@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { theme } = useTheme();
 
   // Observa a rolagem da página para mostrar ou esconder o botão
   useEffect(() => {
@@ -64,7 +66,11 @@ const ScrollToTop: React.FC = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-colors focus:outline-none flex items-center justify-center"
+          className={`fixed bottom-6 right-6 z-50 p-3 rounded-full text-white transition-colors focus:outline-none flex items-center justify-center ${
+            theme === 'hacker' 
+              ? 'bg-green-600 hover:bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)]' 
+              : 'bg-purple-600 hover:bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]'
+          }`}
           aria-label="Voltar para o topo"
         >
           <ArrowUp size={24} />

@@ -33,12 +33,26 @@ const Hero: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           className="relative mb-8 group"
         >
-          {/* Efeito de Chuva de Código atrás da imagem */}
-          <div className="absolute inset-[-50%] overflow-hidden rounded-full z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none">
-             <div className="absolute inset-0 text-green-500 font-mono text-[10px] leading-tight flex flex-col items-center justify-start animate-[scanlineScroll_10s_linear_infinite]" style={{textShadow: '0 0 5px #00ff00'}}>
-               {'01001011 01100101 01110000 01110100\n01101000 01100101 00100000 01101101\n01100001 01100111 01101001 01100011\n01001110 01101111 01100100 01100101\n01010010 01100101 01100001 01100011\n01110100 00100000 01110000 01111001\n01110100 01101000 01101111 01101110\n01100010 01100001 01100011 01101011\n01100101 01101110 01100100 01110011\n01111001 01110011 01110100 01100101\n01101101 00100000 01101111 01101110\n01101100 01101001 01101110 01100101\n01001011 01100101 01110000 01110100\n01101000 01100101 00100000 01101101\n01100001 01100111 01101001 01100011'}
-             </div>
-          </div>
+          {/* Bits Flutuantes */}
+          {[
+            { v: '0', t: 'top-0 -left-6', color: 'text-purple-400', size: 'text-xs', dur: 4, del: 0, x: 10, y: -15, rot: 15 },
+            { v: '1', t: 'bottom-4 -right-6', color: 'text-pink-400', size: 'text-sm', dur: 5, del: 1, x: -15, y: 20, rot: -10 },
+            { v: '1', t: '-top-4 right-2', color: 'text-green-400', size: 'text-xs', dur: 6, del: 2, x: -10, y: -20, rot: 20 },
+            { v: '0', t: '-bottom-4 -left-2', color: 'text-purple-300', size: 'text-xs', dur: 4.5, del: 0.5, x: 15, y: 15, rot: -20 },
+            { v: '1', t: 'top-1/2 -left-10', color: 'text-green-300', size: 'text-[10px]', dur: 3.5, del: 1.5, x: 12, y: -10, rot: 45 },
+            { v: '0', t: 'top-1/3 -right-8', color: 'text-purple-500', size: 'text-xs', dur: 5.5, del: 0.8, x: -12, y: -15, rot: -30 },
+            { v: '1', t: 'bottom-10 -left-8', color: 'text-pink-500', size: 'text-[10px]', dur: 4.2, del: 2.5, x: 8, y: 18, rot: 10 },
+            { v: '0', t: '-bottom-8 right-6', color: 'text-green-500', size: 'text-xs', dur: 4.8, del: 1.2, x: -10, y: 12, rot: -15 },
+            { v: '1', t: '-top-8 left-10', color: 'text-purple-300', size: 'text-[10px]', dur: 3.8, del: 0.3, x: 15, y: -8, rot: 60 },
+            { v: '0', t: 'bottom-0 right-10', color: 'text-pink-300', size: 'text-xs', dur: 5.2, del: 1.8, x: -18, y: -10, rot: -45 },
+          ].map((bit, i) => (
+            <motion.div 
+              key={i}
+              className={`absolute ${bit.t} ${bit.color} font-mono ${bit.size} opacity-60 pointer-events-none z-20`}
+              animate={{ y: [0, bit.y, 0], x: [0, bit.x, 0], rotate: [0, bit.rot, 0] }}
+              transition={{ duration: bit.dur, repeat: Infinity, ease: "easeInOut", delay: bit.del }}
+            >{bit.v}</motion.div>
+          ))}
 
           <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition duration-700 animate-[spin_4s_linear_infinite] z-0"></div>
           <img src="https://github.com/letticiasabino.png" alt="Lettícia Sabino" className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#030712] object-cover z-10 shadow-[0_0_25px_rgba(168,85,247,0.4)] group-hover:shadow-[0_0_40px_rgba(168,85,247,0.8)] transition-shadow duration-500" />
@@ -54,14 +68,14 @@ const Hero: React.FC = () => {
           {resumeData.title.toUpperCase()}
         </motion.div>
         
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 sm:mb-6 tracking-tight">
           Olá, eu sou <br className="md:hidden" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 animate-gradient-x cursor-blink">
             {resumeData.name}
           </span>
         </h1>
         
-        <div className="text-lg md:text-xl text-muted mb-10 max-w-2xl font-mono h-24 md:h-16 flex items-center justify-center">
+        <div className="text-base sm:text-lg md:text-xl text-muted mb-10 max-w-2xl font-mono h-24 md:h-16 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.p
               key={currentPhrase}
@@ -76,10 +90,10 @@ const Hero: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto px-4 sm:px-0">
           <a 
             href="#projects" 
-            className="group relative px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-semibold transition-all duration-300 w-full sm:w-auto text-center flex items-center justify-center gap-2 overflow-hidden neon-glow shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+            className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-semibold transition-all duration-300 w-full sm:w-auto text-center flex items-center justify-center gap-2 overflow-hidden neon-glow shadow-[0_0_20px_rgba(168,85,247,0.4)] text-sm sm:text-base"
           >
             <span className="relative z-10">Ver Projetos</span>
             <ChevronRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -91,9 +105,9 @@ const Hero: React.FC = () => {
             download="Letticia-Sabino-Dev.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 glass-effect hover:bg-white/10 text-[var(--text-main)] rounded-full font-semibold transition-all duration-300 w-full sm:w-auto text-center flex items-center justify-center gap-2 group border border-white/10 hover:border-purple-500/50"
+            className="px-6 py-3 sm:px-8 sm:py-4 glass-effect hover:bg-white/10 text-[var(--text-main)] rounded-full font-semibold transition-all duration-300 w-full sm:w-auto text-center flex items-center justify-center gap-2 group border border-white/10 hover:border-purple-500/50 text-sm sm:text-base"
           >
-            Baixar currículo em PDF
+            Baixar currículo
             <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
           </a>
         </div>

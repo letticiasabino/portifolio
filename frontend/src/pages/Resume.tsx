@@ -39,7 +39,7 @@ const Resume: React.FC = () => {
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600">
                   {resumeData.name}
                 </span>
@@ -73,7 +73,7 @@ const Resume: React.FC = () => {
 
         {/* Resumo Profissional */}
         <motion.section variants={itemVariants} className="glass-effect rounded-2xl p-8 hover:border-[#00ff00]/50 transition-colors">
-          <h3 className="text-2xl font-mono font-semibold mb-4 flex items-center gap-3 text-green-400 cursor-blink">
+          <h3 className="text-xl sm:text-2xl font-mono font-semibold mb-4 sm:mb-6 flex flex-wrap items-center gap-2 sm:gap-3 text-green-400 cursor-blink">
             <span className="text-green-500">{`>`}</span>
             fetching profile_summary... <span className="text-sm text-green-600 ml-2">[OK]</span>
           </h3>
@@ -88,7 +88,7 @@ const Resume: React.FC = () => {
             
             {/* Experiência */}
             <motion.section variants={itemVariants}>
-              <h3 className="text-2xl font-mono font-semibold mb-6 flex items-center gap-3 text-green-400 cursor-blink">
+              <h3 className="text-xl sm:text-2xl font-mono font-semibold mb-4 sm:mb-6 flex flex-wrap items-center gap-2 sm:gap-3 text-green-400 cursor-blink">
                 <span className="text-green-500">{`>`}</span>
                 loading career_history... <span className="text-sm text-green-600 ml-2">[OK]</span>
               </h3>
@@ -111,7 +111,7 @@ const Resume: React.FC = () => {
             
             {/* Formação */}
             <motion.section variants={itemVariants}>
-              <h3 className="text-2xl font-mono font-semibold mb-6 flex items-center gap-3 text-green-400 cursor-blink">
+              <h3 className="text-xl sm:text-2xl font-mono font-semibold mb-4 sm:mb-6 flex flex-wrap items-center gap-2 sm:gap-3 text-green-400 cursor-blink">
                 <span className="text-green-500">{`>`}</span>
                 mounting education_modules... <span className="text-sm text-green-600 ml-2">[OK]</span>
               </h3>
@@ -128,7 +128,7 @@ const Resume: React.FC = () => {
 
             {/* Cursos */}
             <motion.section variants={itemVariants}>
-              <h3 className="text-2xl font-mono font-semibold mb-6 flex items-center gap-3 text-green-400 cursor-blink">
+              <h3 className="text-xl sm:text-2xl font-mono font-semibold mb-4 sm:mb-6 flex flex-wrap items-center gap-2 sm:gap-3 text-green-400 cursor-blink">
                 <span className="text-green-500">{`>`}</span>
                 verifying certifications... <span className="text-sm text-green-600 ml-2">[OK]</span>
               </h3>
@@ -144,7 +144,7 @@ const Resume: React.FC = () => {
 
             {/* Idiomas */}
             <motion.section variants={itemVariants}>
-              <h3 className="text-2xl font-mono font-semibold mb-6 flex items-center gap-3 text-green-400 cursor-blink">
+              <h3 className="text-xl sm:text-2xl font-mono font-semibold mb-4 sm:mb-6 flex flex-wrap items-center gap-2 sm:gap-3 text-green-400 cursor-blink">
                 <span className="text-green-500">{`>`}</span>
                 parsing language_packs... <span className="text-sm text-green-600 ml-2">[OK]</span>
               </h3>

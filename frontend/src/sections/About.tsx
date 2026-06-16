@@ -26,7 +26,7 @@ const About: React.FC = () => {
     <section id="about" className="py-20 scroll-mt-20">
       <SectionHeading 
         badge="Minha Jornada" 
-        title="Construindo em Público" 
+        title="Construção Contínua" 
         subtitle="De vendas e suporte técnico para a criação de soluções em código."
       />
       
@@ -73,15 +73,31 @@ const About: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 <span className="ml-2 text-xs text-muted/70">letticia.ts</span>
               </div>
-              <div className="p-4 md:p-6 flex-1 overflow-x-auto text-left whitespace-pre-wrap break-words">
-                <span className="text-pink-500">const</span> <span className="text-blue-400">letticia</span> <span className="text-white">=</span> <span className="text-yellow-300">{`{`}</span><br/>
-                {'  '}<span className="text-purple-300">focus</span><span className="text-white">:</span> <span className="text-green-400">"Backend / Full Stack Development"</span><span className="text-white">,</span><br/>
-                {'  '}<span className="text-purple-300">status</span><span className="text-white">:</span> <span className="text-green-400">"building in public — shipping to production"</span><span className="text-white">,</span><br/>
-                {'  '}<span className="text-purple-300">currently</span><span className="text-white">: [</span><span className="text-green-400">"Node.js"</span><span className="text-white">, </span><span className="text-green-400">"Python"</span><span className="text-white">, </span><span className="text-green-400">"Next.js"</span><span className="text-white">],</span><br/>
-                {'  '}<span className="text-purple-300">education</span><span className="text-white">: [</span><span className="text-green-400">"ADS — FAM"</span><span className="text-white">, </span><span className="text-green-400">"SI — Uni-FACEF"</span><span className="text-white">],</span><br/>
-                {'  '}<span className="text-purple-300">background</span><span className="text-white">: [</span><span className="text-green-400">"Customer Engineer"</span><span className="text-white">, </span><span className="text-green-400">"Tech Sales"</span><span className="text-white">, </span><span className="text-green-400">"Technical Support"</span><span className="text-white">],</span><br/>
-                {'  '}<span className="text-purple-300">superpower</span><span className="text-white">:</span> <span className="text-green-400">"resolução de problemas e entrega de soluções escaláveis"</span><br/>
-                <span className="text-yellow-300">{`}`}</span><span className="text-white">;</span>
+              <div className="p-4 md:p-6 flex-1 overflow-x-auto text-left whitespace-pre-wrap break-words text-sm font-mono leading-relaxed">
+                <div className="text-gray-500 mb-3"># Iniciando sistema... OK</div>
+                
+                <div className="text-green-400 mb-1"><span className="text-purple-400">~</span>$ whoami</div>
+                <div className="text-gray-300 mb-4">{`>`} Lettícia Sabino | Desenvolvedora Full Stack</div>
+
+                <div className="text-green-400 mb-1"><span className="text-purple-400">~</span>$ cat letticia.ts</div>
+                <div className="mb-4">
+                  <span className="text-pink-500">const</span> <span className="text-blue-400">profile</span> <span className="text-white">=</span> <span className="text-yellow-300">{`{`}</span><br/>
+                  {'  '}<span className="text-purple-300">role</span><span className="text-white">:</span> <span className="text-green-400">"Desenvolvedora Full Stack"</span><span className="text-white">,</span><br/>
+                  {'  '}<span className="text-purple-300">focus</span><span className="text-white">:</span> <span className="text-green-400">"Backend (Node.js, Python)"</span><span className="text-white">,</span><br/>
+                  {'  '}<span className="text-purple-300">studying</span><span className="text-white">:</span> <span className="text-green-400">"Arquitetura de Software e Cloud"</span><span className="text-white">,</span><br/>
+                  {'  '}<span className="text-purple-300">education</span><span className="text-white">: [</span><span className="text-green-400">"ADS — FAM"</span><span className="text-white">, </span><span className="text-green-400">"SI — Uni-FACEF"</span><span className="text-white">],</span><br/>
+                  {'  '}<span className="text-purple-300">experience</span><span className="text-white">: [</span><span className="text-green-400">"Atendimento ao Cliente"</span><span className="text-white">, </span><span className="text-green-400">"Vendas Tech B2B"</span><span className="text-white">, </span><span className="text-green-400">"Suporte Técnico"</span><span className="text-white">],</span><br/>
+                  {'  '}<span className="text-purple-300">projects</span><span className="text-white">:</span> <span className="text-green-400">"Building in public on GitHub"</span><span className="text-white">,</span><br/>
+                  {'  '}<span className="text-purple-300">location</span><span className="text-white">:</span> <span className="text-green-400">"Brasil"</span><br/>
+                  <span className="text-yellow-300">{`}`}</span><span className="text-white">;</span>
+                </div>
+
+                <div className="text-green-400 mb-1"><span className="text-purple-400">~</span>$ npm run status</div>
+                <div className="text-cyan-400 mb-4">{`> `}"building in public — shipping to production"</div>
+
+                <div className="text-green-400 flex items-center">
+                  <span className="text-purple-400 mr-2">~</span>$ next_step <span className="ml-2 w-2 h-4 bg-gray-300 animate-pulse inline-block"></span>
+                </div>
               </div>
             </GlassCard>
           </motion.div>

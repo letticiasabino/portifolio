@@ -28,8 +28,27 @@ const Projects: React.FC = () => {
       <SectionHeading 
         badge="Portfólio" 
         title="Projetos no GitHub" 
-        subtitle="Repositórios recentes, ignorando forks, sincronizados em tempo real."
+        subtitle="Repositórios recentes e contribuições em tempo real."
       />
+
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        className="max-w-4xl mx-auto mb-16 px-4"
+      >
+        <GlassCard className="p-4 sm:p-6 overflow-x-auto flex flex-col items-center group">
+          <h4 className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-4">Activity Heatmap</h4>
+          <div className="w-full min-w-[700px] flex justify-center">
+            <img 
+              src="https://ghchart.rshah.org/a855f7/letticiasabino" 
+              alt="Lettícia Sabino's GitHub Contributions" 
+              className="w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              style={{ filter: 'drop-shadow(0 0 10px rgba(168,85,247,0.2))' }}
+            />
+          </div>
+        </GlassCard>
+      </motion.div>
 
       {loading ? (
         <div className="flex justify-center items-center h-64">

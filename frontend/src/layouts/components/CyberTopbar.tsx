@@ -16,8 +16,9 @@ const CyberTopbar: React.FC = () => {
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        <div className="text-gray-400 bg-[#161b22] px-4 py-1 rounded-t-md mt-2 border border-b-0 border-green-500/20">
-          letticia.dev ~ {location.pathname === '/' ? '/home' : location.pathname}
+        <div className="text-gray-400 bg-[#161b22] px-2 sm:px-4 py-1 rounded-t-md mt-2 border border-b-0 border-green-500/20 max-w-[140px] sm:max-w-[200px] md:max-w-xs truncate">
+          <span className="random-glitch">letticia.dev</span>
+          <span className="hidden sm:inline"> ~ {location.pathname === '/' ? '/home' : location.pathname}</span>
         </div>
       </div>
       
@@ -45,7 +46,7 @@ const CyberTopbar: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute top-[100%] left-0 right-0 bg-[#0d1117] border-b border-green-500/30 flex flex-col p-6 md:hidden z-50 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+        <div className="absolute top-[100%] left-0 right-0 bg-[#0d1117]/98 backdrop-blur-md border-b border-green-500/30 flex flex-col p-6 md:hidden z-50 shadow-[0_10px_30px_rgba(0,0,0,0.8)] max-h-[calc(100vh-48px)] overflow-y-auto">
           <Link to="/" onClick={() => setIsOpen(false)} className="text-green-400 font-bold text-lg hover:text-white transition-colors py-3 border-b border-gray-800">~/home</Link>
           <a href="#projects" onClick={() => setIsOpen(false)} className="text-green-400 font-bold text-lg hover:text-white transition-colors py-3 border-b border-gray-800">~/projects</a>
           <a href="#skills" onClick={() => setIsOpen(false)} className="text-green-400 font-bold text-lg hover:text-white transition-colors py-3 border-b border-gray-800">~/skills</a>

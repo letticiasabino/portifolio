@@ -5,6 +5,7 @@ import EducationList from './experience/EducationList';
 import CoursesList from './experience/CoursesList';
 import LanguagesGrid from './experience/LanguagesGrid';
 import SkillsSection from './experience/SkillsSection';
+import CareerTransitionPanel from './experience/CareerTransitionPanel';
 
 const Experience: React.FC = () => {
   return (
@@ -15,15 +16,19 @@ const Experience: React.FC = () => {
         subtitle="Conheça minha jornada acadêmica e profissional."
       />
 
-      <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-20 items-start">
+      <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-20">
         {/* Coluna Esquerda: Experiência Profissional */}
         <ExperienceTimeline />
 
-        {/* Coluna Direita: Educação, Cursos, Idiomas */}
-        <div className="space-y-12">
-          <EducationList />
-          <CoursesList />
-          <LanguagesGrid />
+        {/* Coluna Direita: Educação, Cursos, Idiomas e Painel de Transição */}
+        <div className="flex flex-col gap-12 h-full">
+          <div className="space-y-12">
+            <EducationList />
+            <CoursesList />
+            <LanguagesGrid />
+          </div>
+          
+          <CareerTransitionPanel />
         </div>
       </div>
 
