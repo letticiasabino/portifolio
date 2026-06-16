@@ -15,7 +15,7 @@ Portfólio profissional moderno e dinâmico, projetado com as melhores tecnologi
 
 - **Integração com API do GitHub:** Os projetos na seção de portfólio são puxados dinamicamente diretamente do GitHub em tempo real!
 - **Navegação Dinâmica:** Roteamento de páginas instantâneo e suave no lado do cliente com React Router.
-- **Contato via E-mail:** Formulário de contato ligado a um servidor Backend próprio, que realiza o disparo real de e-mails via API HTTP (Resend).
+- **Contato Avançado:** Formulário de contato ligado a um servidor Backend próprio, que realiza o disparo real de e-mails via API HTTP (Resend). Inclui suporte para preenchimento de WhatsApp, gerando um link direto para chat no e-mail recebido.
 - **Currículo Embutido:** Página dedicada e customizada para visualização e leitura do currículo profissional.
 
 ## 📁 Estrutura de Arquivos
